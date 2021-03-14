@@ -1,0 +1,55 @@
+<?xml version="1.0"?>
+<testCase version="8.5.0.202103110519">
+    <general>
+        <tags>!test!test!,@test@test@,#test#test#,$test$test$,%test%test%,^test^test^,&amp;test&amp;test&amp;,*test*test*,(test(test(,)test)test),_test_test_,-test-test-,+test+test+,=test=test=,{test{test{,[test[test[,]test]test],\\test\\test\\,|test|test|,:test:test:,:test:test:,&quot;test&quot;test&quot;,&apos;test&apos;test&apos;,&lt;test&lt;test&lt;,&gt;test&gt;test&gt;,.test.test.,?test?test?,/test/test/,~test~test~,`test`test`</tags>
+        <language>Python</language>
+    </general>
+    <procedures>
+        <item name="main">
+            <steps>
+                <item guid="2915158b-da1b-46d5-b2bc-37d60e88e743" action="eval" useFieldsInCommand="false">
+                    <command>
+                        <body>print(param(&apos;param1&apos;))</body>
+                    </command>
+                    <postProcessing>
+                        <analysisRules>
+                            <item>
+                                <extractorInfo extractorType="contains">
+                                    <extractorProperties type="com.fnfr.svt.mapping.execution.extractors.ExtractorContainsPropertyGroup">
+                                        <searchString>ok</searchString>
+                                    </extractorProperties>
+                                </extractorInfo>
+                                <processorInfo ruleType="assert">
+                                    <ruleProperties type="com.fnfr.svt.execution.builtin.processors.AssertionPropertyGroup">
+                                        <expression>value == 1</expression>
+                                        <actionsWhenTrue>
+                                            <item actionId="DeclareExecutionIssue">
+                                                <actionProperties type="com.fnfr.svt.execution.builtin.actions.ExecutionIssuePropertyGroup" severity="OK">
+                                                    <message>{auto_message_true}</message>
+                                                </actionProperties>
+                                            </item>
+                                            <item actionId="PassTestIfNotAlreadyFailed">
+                                                <actionProperties type="com.fnfr.svt.documents.EmptyPropertyGroup"/>
+                                            </item>
+                                        </actionsWhenTrue>
+                                        <actionsWhenFalse>
+                                            <item actionId="DeclareExecutionIssue">
+                                                <actionProperties type="com.fnfr.svt.execution.builtin.actions.ExecutionIssuePropertyGroup">
+                                                    <message>{auto_message_false}</message>
+                                                </actionProperties>
+                                            </item>
+                                            <item actionId="FailTest">
+                                                <actionProperties type="com.fnfr.svt.documents.EmptyPropertyGroup"/>
+                                            </item>
+                                        </actionsWhenFalse>
+                                    </ruleProperties>
+                                </processorInfo>
+                            </item>
+                        </analysisRules>
+                    </postProcessing>
+                    <applicationProperties type="com.fnfr.svt.documents.EmptyPropertyGroup"/>
+                </item>
+            </steps>
+        </item>
+    </procedures>
+</testCase>
