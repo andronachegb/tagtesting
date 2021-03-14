@@ -1,8 +1,9 @@
 <?xml version="1.0"?>
-<ParameterTree version="8.5.0.202103071748">
+<ParameterTree version="8.5.0.202103110519">
     <parameters escape="true">
         <parameters xmlns:pt="http://www.fnfr.com/schemas/parameterTree">
             <param1>ok</param1>
         </parameters>
     </parameters>
+    <tags>!test!test!,@test@test@,#test#test#,$test$test$,%test%test%,^test^test^,&amp;test&amp;test&amp;,*test*test*,(test(test(,)test)test),_test_test_,-test-test-,+test+test+,=test=test=,{test{test{,[test[test[,]test]test],\\test\\test\\,|test|test|,:test:test:,:test:test:,&quot;test&quot;test&quot;,&apos;test&apos;test&apos;,&lt;test&lt;test&lt;,&gt;test&gt;test&gt;,.test.test.,?test?test?,/test/test/,~test~test~,`test`test`</tags>
 </ParameterTree>
